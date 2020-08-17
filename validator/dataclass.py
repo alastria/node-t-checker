@@ -38,5 +38,4 @@ class EnodeRequestConfig:
 
 class PublishableOutput(ABC):
     @abstractmethod
-    def publish(self, body: str) -> None:
-        pass
+    def publish(self, body: str) -> None: pass

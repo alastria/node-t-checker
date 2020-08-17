@@ -1,0 +1,1 @@
+class EnodeNotFoundException(Exception): pass

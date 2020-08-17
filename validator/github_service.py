@@ -2,7 +2,8 @@ import json
 
 from github import Github
 
-from dataclass import PublishableOutput
+from dataclass import PublishableOutput, NodeInformation
+
 
 class GithubService(PublishableOutput):
     REPOSITORY = 'alastria/alastria-node'
@@ -21,3 +22,7 @@ class GithubService(PublishableOutput):
     def publish(self, body: str) -> None:
         data = self.repo.get_pull(self.pull_request_id)
         data.create_issue_comment(body)
+
+    def get_pr_body(self) -> str:
+        pr = self.repo.get_pull(self.pull_request_id)
+        return pr.body

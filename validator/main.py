@@ -5,8 +5,10 @@ import click
 
 from validator import NodeValidator
 from formatter import ValidatorOutputFormatter
-from dataclass import ValidatorOutput, EnodeRequestConfig
+from dataclass import ValidatorOutput, EnodeRequestConfig, NodeInformation
+from parser import NodeInformationParser
 from github_service import GithubService
+from exceptions import EnodeNotFoundException
 
 
 @click.command()
@@ -26,7 +28,13 @@ def validate():
 
     github_service = GithubService(GITHUB_TOKEN)
     github_service.use_pull_request_id(pull_request_id)
-    node_info = github_service.get_node_info()
+    pr_body = github_service.get_pr_body()
+
+    try:
+        node_info: NodeInformation = NodeInformationParser.extract_from_text(
+            pr_body)
+    except EnodeNotFoundException:
+        return
 
     node_validator = NodeValidator(
         node_info

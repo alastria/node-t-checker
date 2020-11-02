@@ -5,7 +5,7 @@ import click
 
 from .validator import NodeValidator
 from .formatter import ValidatorOutputFormatter
-from .types import ValidatorOutput, EnodeRequestConfig
+from .dataclass import ValidatorOutput, EnodeRequestConfig
 from .github import GithubService
 
 

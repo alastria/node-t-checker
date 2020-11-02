@@ -2,7 +2,7 @@ import json
 
 from github import Github
 
-from .types import PublishableOutput
+from .dataclass import PublishableOutput
 
 class GithubService(PublishableOutput):
     REPOSITORY = 'alastria/alastria-node'

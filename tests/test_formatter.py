@@ -1,5 +1,5 @@
 from validator.formatter import ValidatorOutputFormatter
-from validator.types import ValidatorOutput
+from validator.dataclass import ValidatorOutput
 
 
 def test_get_message_return_success(mocker):

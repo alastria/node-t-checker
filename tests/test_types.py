@@ -1,4 +1,4 @@
-from validator.types import ValidatorOutput
+from validator.dataclass import ValidatorOutput
 
 
 def test_validator_output_get_errors_return_empty():

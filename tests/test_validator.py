@@ -3,7 +3,7 @@ import tempfile
 
 from .mocks import SubprocessOutputMock
 from validator.validator import NodeValidator
-from validator.types import NodeInformation, EnodeRequestConfig
+from validator.dataclass import NodeInformation, EnodeRequestConfig
 
 
 def test_is_ip_public_returncode_invalid_return_false(mocker):

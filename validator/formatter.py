@@ -1,6 +1,6 @@
 from typing import List
 
-from .dataclass import ValidatorOutput, PublishableOutput
+from validator.dataclass import ValidatorOutput, PublishableOutput
 
 
 class ValidatorOutputFormatter:

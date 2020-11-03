@@ -7,7 +7,7 @@ from typing import Optional, List
 import requests
 from requests.exceptions import HTTPError
 
-from validator.dataclass import NodeInformation, ValidatorOutput, EnodeRequestConfig
+from dataclass import NodeInformation, ValidatorOutput, EnodeRequestConfig
 
 
 class NodeValidator():

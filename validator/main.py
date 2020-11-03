@@ -3,10 +3,10 @@ import os
 
 import click
 
-from validator.validator import NodeValidator
-from validator.formatter import ValidatorOutputFormatter
-from validator.dataclass import ValidatorOutput, EnodeRequestConfig
-from validator.github import GithubService
+from validator import NodeValidator
+from formatter import ValidatorOutputFormatter
+from dataclass import ValidatorOutput, EnodeRequestConfig
+from github import GithubService
 
 
 @click.command()

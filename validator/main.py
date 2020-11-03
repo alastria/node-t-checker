@@ -6,7 +6,7 @@ import click
 from validator import NodeValidator
 from formatter import ValidatorOutputFormatter
 from dataclass import ValidatorOutput, EnodeRequestConfig
-from github import GithubService
+from github_service import GithubService
 
 
 @click.command()

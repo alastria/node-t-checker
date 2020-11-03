@@ -15,7 +15,7 @@ def test_get_message_return_success(mocker):
     }
     output = ValidatorOutput(**data)
     formatter = ValidatorOutputFormatter(
-        mocker.patch('validator.github.GithubService'),
+        mocker.patch('validator.github_service.GithubService'),
         output
     )
 
@@ -39,7 +39,7 @@ def test_get_message_return_errors_formatted(mocker):
     }
     output = ValidatorOutput(**data)
     formatter = ValidatorOutputFormatter(
-        mocker.patch('validator.github.GithubService'),
+        mocker.patch('validator.github_service.GithubService'),
         output
     )
 
@@ -61,7 +61,7 @@ def test_get_format_errors_empty_errors(mocker):
     }
     output = ValidatorOutput(**data)
     formatter = ValidatorOutputFormatter(
-        mocker.patch('validator.github.GithubService'),
+        mocker.patch('validator.github_service.GithubService'),
         output
     )
 
@@ -86,7 +86,7 @@ def test_get_format_errors_with_errors(mocker):
     }
     output = ValidatorOutput(**data)
     formatter = ValidatorOutputFormatter(
-        mocker.patch('validator.github.GithubService'),
+        mocker.patch('validator.github_service.GithubService'),
         output
     )
 

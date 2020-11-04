@@ -13,7 +13,7 @@ from exceptions import EnodeNotFoundException
 
 @click.command()
 def validate():
-    pull_request_id: int = os.environ.get('TRAVIS_PULL_REQUEST')
+    pull_request_id = os.environ.get('TRAVIS_PULL_REQUEST')
     GITHUB_TOKEN = os.environ.get('GITHUB_TOKEN')
 
     print(f"pull_request_id-> {pull_request_id}")
@@ -35,7 +35,7 @@ def validate():
     )
 
     github_service = GithubService(GITHUB_TOKEN)
-    github_service.use_pull_request_id(pull_request_id)
+    github_service.use_pull_request_id(int(pull_request_id))
     pr_body = github_service.get_pr_body()
 
     try:

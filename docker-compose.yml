@@ -4,12 +4,5 @@ services:
   validator:
     build: .
     image: alastria/node-t-validator
-    environment:
-      - GITHUB_TOKEN
-      - TRAVIS_PULL_REQUEST
-      - ENODE_URL
-      - ENODE_USERNAME
-      - ENODE_PASSWORD
-      - ENODE_DB
     volumes:
       - .:/code

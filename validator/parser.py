@@ -1,7 +1,7 @@
 import re
 
-from validator.exceptions import EnodeNotFoundException
-from validator.types import NodeInformation
+from exceptions import EnodeNotFoundException
+from types import NodeInformation
 
 
 class NodeInformationParser:

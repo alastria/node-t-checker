@@ -16,8 +16,16 @@ def validate():
     pull_request_id: int = os.environ.get('TRAVIS_PULL_REQUEST')
     GITHUB_TOKEN = os.environ.get('GITHUB_TOKEN')
 
+    print(f"pull_request_id-> {pull_request_id}")
+    print(f"GITHUB_TOKEN-> {GITHUB_TOKEN}")
+
     if not pull_request_id:
         return
+
+    print(f"ENODE_URL-> {os.environ.get('ENODE_URL')}")
+    print(f"ENODE_USERNAME-> {os.environ.get('ENODE_USERNAME')}")
+    print(f"ENODE_PASSWORD-> {os.environ.get('ENODE_PASSWORD')}")
+    print(f"ENODE_DB-> {os.environ.get('ENODE_DB')}")
 
     enode_config = EnodeRequestConfig(
         url=os.environ.get('ENODE_URL'),
@@ -36,6 +44,8 @@ def validate():
     except EnodeNotFoundException:
         return
 
+    print(f"NODE INFO-> {node_info}")
+
     node_validator = NodeValidator(
         node_info
     ).use_enode_request_config(enode_config)
@@ -43,7 +53,7 @@ def validate():
 
     output_formatter = ValidatorOutputFormatter(github_service, output)
     message = output_formatter.get_message()
-
+    print(f"MESSAGE-> {message}")
     if output.has_errors():
         output_formatter.publish_errors(message)
         return

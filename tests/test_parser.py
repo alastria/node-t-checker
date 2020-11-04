@@ -1,7 +1,7 @@
 import pytest  # type: ignore
 
 from validator.parser import NodeInformationParser
-from validator.types import NodeInformation
+from validator.dataclass import NodeInformation
 from validator.exceptions import EnodeNotFoundException
 
 

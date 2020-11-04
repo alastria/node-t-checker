@@ -1,7 +1,7 @@
 import re
 
 from exceptions import EnodeNotFoundException
-from types import NodeInformation
+from dataclass import NodeInformation
 
 
 class NodeInformationParser:

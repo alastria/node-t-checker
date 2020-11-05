@@ -5,6 +5,9 @@ services:
     build: .
     environment:
       GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
+      TRAVIS_PULL_REQUEST: ${{TRAVIS_PULL_REQUEST}}
     image: alastria/node-t-validator
     volumes:
       - .:/code
+
+docker run wealizedigital/alastria-node-t-checker /bin/sh -c "cd validator && poetry run python -u main.py"

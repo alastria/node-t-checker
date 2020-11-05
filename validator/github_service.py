@@ -1,3 +1,4 @@
+import os
 import json
 
 from github import Github
@@ -6,7 +7,7 @@ from dataclass import PublishableOutput, NodeInformation
 
 
 class GithubService(PublishableOutput):
-    REPOSITORY = 'alastria/alastria-node'
+    REPOSITORY = os.environ.get('REPOSITORY')
 
     def __init__(self, token: str):
         self.client = Github(token)

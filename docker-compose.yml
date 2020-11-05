@@ -3,9 +3,6 @@ version: '2'
 services:
   validator:
     build: .
-    environment:
-      GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
-      TRAVIS_PULL_REQUEST: ${{TRAVIS_PULL_REQUEST}}
     image: alastria/node-t-validator
     volumes:
       - .:/code

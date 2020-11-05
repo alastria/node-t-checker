@@ -20,13 +20,11 @@ class ValidatorOutputFormatter:
     ):
         self.publish_service = service
         self.output = output
-        self.has_errors = False
 
     def get_message(self):
         errors = self.output.get_errors()
 
         if errors:
-            self.has_errors = True
             return self.format_errors(errors)
 
         return self.SUCCESS_MESSAGE

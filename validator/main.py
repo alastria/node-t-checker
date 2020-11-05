@@ -58,7 +58,7 @@ def validate():
     output_formatter = ValidatorOutputFormatter(github_service, output)
     message = output_formatter.get_message()
     print(f"MESSAGE-> {message}")
-    if output.has_errors:
+    if output.get_errors():
         output_formatter.publish_errors(message)
         return
 

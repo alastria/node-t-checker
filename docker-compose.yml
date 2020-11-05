@@ -3,6 +3,8 @@ version: '2'
 services:
   validator:
     build: .
+    environment:
+      GITHUB_TOKEN: ${secrets.GITHUB_TOKEN}
     image: alastria/node-t-validator
     volumes:
       - .:/code

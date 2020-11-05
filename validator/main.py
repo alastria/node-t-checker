@@ -38,10 +38,13 @@ def validate():
     github_service.use_pull_request_id(int(pull_request_id))
     pr_body = github_service.get_pr_body()
 
+    print(f"PR BODY-> {pr_body}")
+
     try:
         node_info: NodeInformation = NodeInformationParser.extract_from_text(
             pr_body)
-    except EnodeNotFoundException:
+    except EnodeNotFoundException as e:
+        print(f"EnodeNotFoundException-> {e}")
         return
 
     print(f"NODE INFO-> {node_info}")
@@ -50,6 +53,8 @@ def validate():
         node_info
     ).use_enode_request_config(enode_config)
     output: ValidatorOutput = node_validator.get_validation()
+
+    print(f"OUTPUT-> {output}")
 
     output_formatter = ValidatorOutputFormatter(github_service, output)
     message = output_formatter.get_message()

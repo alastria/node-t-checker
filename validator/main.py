@@ -50,9 +50,7 @@ def validate():
     print(f"NODE INFO-> {node_info}")
 
     node_validator = NodeValidator(node_info)
-
     node_validator.use_enode_request_config(enode_config)
-
     output: ValidatorOutput = node_validator.get_validation()
 
     print(f"OUTPUT-> {output}")

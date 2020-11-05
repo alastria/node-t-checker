@@ -12,7 +12,7 @@ from dataclass import NodeInformation, ValidatorOutput, EnodeRequestConfig
 
 
 class NodeValidator():
-    REGULAR_DIRECTORY_PATH = 'DIRECTORY_REGULAR.md'
+    REGULAR_DIRECTORY_PATH = 'alastria-node-data/DIRECTORY_REGULAR.md'
 
     PUBLIC_IP_REGEX = r'21000/tcp\s+(open|filtered)'
     NODE_EUROPE_REGEX = r'country:\s+EU'
@@ -24,11 +24,11 @@ class NodeValidator():
         self.enode_request_config = config
 
     def get_validation(self) -> ValidatorOutput:
-        with open('data/validator-nodes.json', 'r') as file:
+        with open('alastria-node-data/data/validator-nodes.json', 'r') as file:
             is_validator_valid=self.is_valid_json_file(file.read())
-        with open('data/constellation-nodes.json', 'r') as file:
+        with open('alastria-node-data/data/constellation-nodes.json', 'r') as file:
             is_constellation_valid=self.is_valid_json_file(file.read())
-        with open('data/regular-nodes.json', 'r') as file:
+        with open('alastria-node-data/data/regular-nodes.json', 'r') as file:
             is_regular_valid=self.is_valid_json_file(file.read())
         with open(self.REGULAR_DIRECTORY_PATH, 'r') as file:
             has_valid_enode = self.has_valid_enode_and_ip_in_regular_directory(file.read())

@@ -4,8 +4,8 @@ services:
   - docker
 
 before_install:
-- docker pull javaguirre/node-t-checker:latest
+- docker pull wealizedigital/alastria-node-t-checker:latest
 
 script:
-- docker run javaguirre/node-t-checker /bin/sh -c "cd /code && poetry run mypy ."
-- docker run javaguirre/node-t-checker /bin/sh -c "cd /code && poetry run python -m pytest --cov=validator"
+- docker run wealizedigital/alastria-node-t-checker /bin/sh -c "cd /code && poetry run mypy ."
+- docker run wealizedigital/alastria-node-t-checkerr /bin/sh -c "cd /code && poetry run python -m pytest --cov=validator"

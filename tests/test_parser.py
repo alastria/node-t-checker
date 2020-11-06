@@ -6,11 +6,9 @@ from validator.exceptions import EnodeNotFoundException
 
 
 def test_extract_from_text_raise_exception():
-    body = '''
-    ENODE: **invalid enode**
-    '''
+    body = '''ENODE: **invalid enode**'''
 
-    with pytest.raises(EnodeNotFoundException):
+    with pytest.raises(Exception):
         NodeInformationParser.extract_from_text(body)
 
 

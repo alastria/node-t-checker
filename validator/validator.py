@@ -88,7 +88,7 @@ class NodeValidator():
         '''
 
         if fake_json:
-            file_output = f'[ {file_output} ]'
+            file_output = f'[ {file_output[:len(file_output)-2]} ]'
 
         try:
             json.loads(file_output)

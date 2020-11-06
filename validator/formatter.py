@@ -11,7 +11,7 @@ class ValidatorOutputFormatter:
         'is_geth_version_valid': 'The geth version has to be v1.8.x',
         'is_constellation_valid': 'The JSON in the data/constellation-nodes.json is not valid, please paste it on https://jsonlint.com',
         'is_validator_valid': 'The JSON in the data/validator-nodes.json is not valid, please paste it on https://jsonlint.com',
-        'is_regular_valid': 'The JSON in the data/validator-nodes.json is not valid, please paste it on https://jsonlint.com',
+        'is_regular_valid': 'The JSON in the data/regular-nodes.json is not valid, please paste it on https://jsonlint.com',
         'is_enode_in_directory_valid': 'The enode in the DIRECTORY_REGULAR.md file is not the same as in the nodes.json files',
     }
 

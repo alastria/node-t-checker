@@ -8,7 +8,7 @@ from formatter import ValidatorOutputFormatter
 from dataclass import ValidatorOutput, EnodeRequestConfig, NodeInformation
 from parser import NodeInformationParser
 from github_service import GithubService
-from exceptions import EnodeNotFoundException
+from exceptions import EnodeNotFoundException, ValidatorException
 
 
 @click.command()
@@ -45,7 +45,7 @@ def validate():
 
     if output.get_errors():
         output_formatter.publish_errors(message)
-        return 1
+        raise ValidatorException()
 
     output_formatter.publish_success_message(message)
 

@@ -93,7 +93,9 @@ class NodeValidator():
         try:
             json.loads(file_output)
         except ValueError:
-            return False
+            if fake_json:
+                return False
+            return self.is_valid_json_file(file_output, True)
         return True
 
     def has_valid_enode_and_ip_in_regular_directory(

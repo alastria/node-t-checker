@@ -16,7 +16,7 @@ def validate():
     pull_request_id = os.environ.get('TRAVIS_PULL_REQUEST')
     GITHUB_TOKEN = os.environ.get('GITHUB_TOKEN')
 
-    if not pull_request_id:
+    if pull_request_id == 'false':
         return
 
     enode_config = EnodeRequestConfig(

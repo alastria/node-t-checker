@@ -1,6 +1,6 @@
 # node-t-checker
 
-[![Build Status](https://travis-ci.org/alastria/node-t-checker.svg?branch=master)](https://travis-ci.org/alastria/node-t-checker)
+![Build](https://github.com/alastria/node-t-checker/workflows/Build/badge.svg)
 
 Application to automatically validate a node in the Alastria T network
 

@@ -1,0 +1,14 @@
+name: CI
+
+on: [push]
+
+jobs:
+  node-t-checker:
+    runs-on: "ubuntu-latest"
+
+    steps:
+      - uses: actions/checkout@v2
+      - name: Run type check
+        run: docker-compose run --rm validator poetry run mypy .
+      - name: Run tests
+        run: docker-compose run --rm validator poetry run python -m pytest --cov=validator
